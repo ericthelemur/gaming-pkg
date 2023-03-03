@@ -1,0 +1,8 @@
+submissions/**
+/.vscode
+/problems
+/gaming.log
+/.env
+
+__pycache__
+/instance

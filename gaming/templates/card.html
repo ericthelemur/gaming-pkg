@@ -1,0 +1,10 @@
+<div class="card p-0 flex-shrink-1" style="width: 18rem; max-height: 32rem">
+    <img src="{{ game.image_url }}" class="card-img-top" alt="...">
+    <h5 class="card-title mt-2 mx-2">{{ game.fullname }}</h5>
+    <p class="card-text flex-grow-1 overflow-scroll mx-2">{{ game.description }}</p>
+    {% if game.installed %}
+    <button class="btn btn-success mx-2 mb-2" onclick="fetch('/run/{{ game.pkgname }}')">Play</a>
+    {% else %}
+    <button class="btn btn-primary mx-2 mb-2" onclick="fetch('/install/{{ game.pkgname }}')">Install</a>
+    {% endif %}
+</div>

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<br>
+<div class="d-flex flex-row justify-content-evenly align-items-center gap-4 display-1">
+    {% for link in links %}
+    <a class="nav-link" href="{{ link.url }}"><i class="{{ link.icon }}"></i></a>
+    {% endfor %}
+</div>
+
+{% if highlights %}
+<h2 class="mt-4"><i class="bi-star-fill"></i>&nbsp;Highlights</h2>
+<div class="row row-cols-2 gap-4">
+    {% for game in highlights %}
+        {% with game=game %}
+            {% include 'card.html' %}
+        {% endwith %}
+    {% endfor %}
+</div>
+{% endif %}
+
+<h2 class="mt-4"><i class="bi-controller"></i>&nbsp;Installed</h2>
+<div class="row row-cols-2 gap-4">
+    {% for game in installed %}
+        {% with game=game %}
+            {% include 'card.html' %}
+        {% endwith %}
+    {% endfor %}
+</div>
+<h2 class="mt-4"><i class="bi-cloud-download"></i>&nbsp;All Games</h2>
+<div class="row row-cols-2 gap-4">
+    {% for game in games %}
+        {% with game=game %}
+            {% include 'card.html' %}
+        {% endwith %}
+    {% endfor %}
+</div>
+
+{% endblock %}
