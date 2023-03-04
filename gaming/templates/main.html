@@ -6,7 +6,7 @@
 <br>
 <div class="d-flex flex-row justify-content-evenly align-items-center gap-4 display-1">
     {% for link in links %}
-    <a class="nav-link" href="{{ link.url }}"><i class="{{ link.icon }}"></i></a>
+    <a class="nav-link" href="{{ link.url }}"><i class="{{ link.icon }}"></i>&nbsp;{{ link.name }}</a>
     {% endfor %}
 </div>
 
